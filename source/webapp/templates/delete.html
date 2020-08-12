@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete{% endblock %}
+
+{% block menu %}
+    <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Отмена</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <h1 id="main-center">Вы уверены, что хотите удалить запись?</h1>
+    <div class="card my-4" style="width: 18rem">
+        <div class="card-body">
+            <h5 class="card-title">{{ task.summary }}</h5>
+            <h6 class="card-status px-1 py-1">Статус: <i>{{ task.status }}</i></h6>
+            <h6 class="card-type px-1 py-1">Типы задачи: {% for type in task.type.all %}
+                <i>{{ type.name }};</i>
+            {% endfor %}</h6>
+            <hr/>
+            {% if task.description %}
+            <p class="price">{{ task.description }}</p>
+            <hr/>
+            {% endif %}
+            <p class="price">{{ task.created_at }}</p>
+        </div>
+    </div>
+    <form action="{% url "delete" task.pk %}" method="post">
+        {% csrf_token %}
+        <p><input type="submit" value="Да" id="submit" class="btn btn-warning mt-5 ml-5 btn-lg"></p>
+        <p><a class="btn btn-info ml-5 btn-lg" href="{% url 'index' %}">Нет</a></p>
+    </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Main{% endblock %}
+
+{% block content %}
+    <h1 id="main-center" class="mt-5">Список задач</h1>
+    <div class="row">
+        {% for task in tasks %}
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+            <div class="card my-4" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title">{{ task.summary }}</h5>
+                    <h6 class="card-status px-1 py-1">Статус: <i>{{ task.status }}</i></h6>
+                    <h6 class="card-type px-1 py-1">Типы задачи: {% for type in task.type.all %}
+                        <i>{{ type.name }};</i>
+                    {% endfor %}
+                    </h6>
+                    <p class="price">{{ task.created_at }}</p>
+                    <a href="{% url 'view' task.pk%}">Подробнее</a>
+                    <a href="{% url 'delete' task.pk%}">Удалить</a>
+                    <a href="{% url 'update' task.pk %}">Обновить</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {#Бонус#}
+    </div>
+{% endblock %}

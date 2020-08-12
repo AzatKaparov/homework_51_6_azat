@@ -1,0 +1,15 @@
+.pre{
+    white-space: pre-line;
+}
+
+.card-status{
+    background-color: greenyellow;
+    color: white;
+    display: inline-block;
+}
+
+.card-type{
+    background-color: blue;
+    color: white;
+    display: inline-block;
+}

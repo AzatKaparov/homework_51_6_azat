@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}View{% endblock %}
+
+
+{% block menu %}
+    <li class="nav-item active">
+        <a class="nav-link" href="{% url 'delete' task.pk %}">Удалить</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="{% url 'update' task.pk %}">Обновить</a>
+    </li>
+{% endblock %}
+
+
+{% block content %}
+    <div class="card my-4" style="width: 18rem">
+        <div class="card-body">
+            <h5 class="card-title">{{ task.summary }}</h5>
+            <i><h6 class="card-status px-1 py-1">Статус: {{ task.status }}</h6></i> <br/>
+            <h6 class="card-type px-1 py-1">Типы задачи: {% for type in task.type.all %}
+                <i>{{ type.name }};</i>
+                    {% endfor %}</h6>
+            <hr/>
+            {% if task.description %}
+            <p class="pre">{{ task.description }}</p>
+            <hr/>
+            {% endif %}
+            <p class="price">{{ task.created_at }}</p>
+        </div>
+    </div>
+    <p class="mt-5"></p><a class="delete-button ml-5 px-3 mb-4" href="{% url 'delete' task.pk %}">Удалить</a><br/>
+    <a class="update-button ml-5 px-3 mb-4" href="{% url 'update' task.pk %}">Обновить</a><br/>
+    <a class="back-button ml-5 px-3 mb-4" href="{% url 'index' %}">Назад</a></p>
+{% endblock %}

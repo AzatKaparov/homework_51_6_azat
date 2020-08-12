@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Create{% endblock %}
+
+{% block menu %}
+    <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Отмена</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <h1>Обновить задачу</h1>
+    {% url "update" pk=task.pk as action_url %}
+    {% include 'partial/form.html' with action_url=action_url form_method='post' button_text='Обновить!' %}
+{% endblock %}
