@@ -1,13 +1,29 @@
 from django import forms
-from .models import Status, Type
+from django.core.exceptions import ValidationError
+from .models import Task, Status, Type
 
 
 BROWSER_DATETIME_FORMAT = '%Y-%m-%dT%H:%M'
 
+# Извините, но более интересные проверки я просто не придумал
+def at_least_10(string):
+   if len(string) < 10:
+       raise ValidationError('Слишком коротко! Минимум 10 символов.')
 
-class TaskForm(forms.Form):
-    summary = forms.CharField(max_length=200, required=True, label='Краткое описание')
-    description = forms.CharField(required=False, label='Полное описание', widget=forms.Textarea)
-    type = forms.ModelMultipleChoiceField(queryset=Type.objects.all(), label='Тип задачи',
-                                          widget=forms.CheckboxSelectMultiple)
-    status = forms.ModelChoiceField(queryset=Status.objects.all(), initial='Новый', label='Статус')
+
+def at_least_50(string):
+    if len(string) < 50:
+        raise ValidationError('Слишком коротко! Минимум 50 символов.')
+
+
+class TaskForm(forms.ModelForm):
+    summary = forms.CharField(validators=(at_least_10,), label='Короткое описание')
+    description = forms.CharField(validators=(at_least_50,), required=False, widget=forms.Textarea,
+                                  label='Подробное описание')
+
+    class Meta:
+        model = Task
+        exclude = ['created_at']
+        widgets = {
+            'type': forms.CheckboxSelectMultiple,
+        }

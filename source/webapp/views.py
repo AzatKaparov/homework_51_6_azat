@@ -6,12 +6,12 @@ from .forms import TaskForm, BROWSER_DATETIME_FORMAT
 
 
 class IndexView(TemplateView):
-    def get(self, request, *args, **kwargs):
-        tasks = Task.objects.all()
-        context = {
-            'tasks': tasks
-        }
-        return render(request, 'index.html', context)
+    template_name = "index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tasks'] = Task.objects.all()
+        return context
 
 
 class TaskView(TemplateView):
@@ -26,13 +26,7 @@ class CreateView(FormView):
     form_class = TaskForm
 
     def form_valid(self, form):
-        data = {}
-        type = form.cleaned_data.pop('type')
-        for key, value in form.cleaned_data.items():
-            if value is not None:
-                data[key] = value
-        self.task = Task.objects.create(**data)
-        self.task.type.set(type)
+        self.task = form.save()
         return super().form_valid(form)
 
     def get_redirect_url(self):
@@ -66,22 +60,17 @@ class UpdateView(FormView):
         context['task'] = self.task
         return context
 
-    def get_initial(self):
-        initial = {}
-        for key in 'summary', 'description', 'status':
-            initial[key] = getattr(self.task, key)
-        initial['created_at'] = self.task.created_at
-        initial['type'] = self.task.type.all()
-        return initial
+    # def get_initial(self):
+    #     return {'publish_at': make_naive(self.article.publish_at)\
+    #         .strftime(BROWSER_DATETIME_FORMAT)}
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['instance'] = self.task
+        return kwargs
 
     def form_valid(self, form):
-        type = form.cleaned_data.pop('type')
-        status = form.cleaned_data.pop('status')
-        for key, value in form.cleaned_data.items():
-            if value is not None:
-                setattr(self.task, key, value)
-        self.task.save()
-        self.task.type.set(type)
+        self.task = form.save()
         return super().form_valid(form)
 
     def get_success_url(self):
