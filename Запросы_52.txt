@@ -1,0 +1,29 @@
+---Первый запрос---
+
+from webapp.models import Task
+import datetime
+from datetime import timedelta
+now = datetime.date.today()
+Task.objects.filter(updated_at__gte=now-timedelta(days=30), status_id=3)
+
+
+---Второй запрос---
+
+from webapp.models import Task
+from django.db.models import Q
+q_1 = Q(status_id__in=[2,3])
+q_2 = Q(type__in=[1,2])
+Task.objects.filter(q_1 & q_2)
+
+---Третий запрос---
+
+from webapp.models import Task
+from django.db.models import Q
+q_1 = Q(summary__icontains='bug')
+q_2 = Q(type=2)
+Task.objects.filter(q_1 | q_2).exclude(status_id=3)
+
+
+
+
+

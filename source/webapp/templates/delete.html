@@ -22,7 +22,8 @@
             <p class="price">{{ task.description }}</p>
             <hr/>
             {% endif %}
-            <p class="price">{{ task.created_at }}</p>
+            <p class="date">Создано: {{ task.created_at }}</p>
+            <p class="date">Обновлено: {{ task.updated_at }}</p>
         </div>
     </div>
     <form action="{% url "delete" task.pk %}" method="post">

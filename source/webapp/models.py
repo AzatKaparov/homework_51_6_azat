@@ -31,6 +31,7 @@ class Task(models.Model):
     type = models.ManyToManyField('webapp.Type', related_name='tasks', blank=True,
                                   verbose_name='Тип задачи', default='Задача')
     created_at = models.DateField(auto_now_add=True, verbose_name='Дата создания')
+    updated_at = models.DateField(auto_now=True, verbose_name='Дата обновления')
 
     class Meta:
         verbose_name = 'Задача'

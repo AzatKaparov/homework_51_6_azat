@@ -9,13 +9,14 @@
         <div class="col-12 col-sm-12 col-md-6 col-lg-4">
             <div class="card my-4" style="width: 18rem">
                 <div class="card-body">
-                    <h5 class="card-title">{{ task.summary }}</h5>
+                    <h5 class="card-title">{{ task.pk }} | {{ task.summary }}</h5>
                     <h6 class="card-status px-1 py-1">Статус: <i>{{ task.status }}</i></h6>
                     <h6 class="card-type px-1 py-1">Типы задачи: {% for type in task.type.all %}
                         <i>{{ type.name }};</i>
                     {% endfor %}
                     </h6>
-                    <p class="price">{{ task.created_at }}</p>
+                    <p class="date">Создано: {{ task.created_at }}</p>
+                    <p class="date">Обновлено: {{ task.updated_at }}</p>
                     <a href="{% url 'view' task.pk%}">Подробнее</a>
                     <a href="{% url 'delete' task.pk%}">Удалить</a>
                     <a href="{% url 'update' task.pk %}">Обновить</a>
@@ -23,6 +24,5 @@
             </div>
         </div>
         {% endfor %}
-        {#Бонус#}
     </div>
 {% endblock %}
