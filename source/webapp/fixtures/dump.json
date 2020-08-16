@@ -3,116 +3,136 @@
   "model": "webapp.status",
   "pk": 1,
   "fields": {
-    "name": "new"
+    "name": "\u041d\u043e\u0432\u044b\u0439"
   }
 },
 {
   "model": "webapp.status",
   "pk": 2,
   "fields": {
-    "name": "in_progress"
+    "name": "\u0412 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435"
   }
 },
 {
   "model": "webapp.status",
   "pk": 3,
   "fields": {
-    "name": "done"
+    "name": "\u0412\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u043e"
   }
 },
 {
   "model": "webapp.type",
   "pk": 1,
   "fields": {
-    "name": "task"
+    "name": "\u0417\u0430\u0434\u0430\u0447\u0430"
   }
 },
 {
   "model": "webapp.type",
   "pk": 2,
   "fields": {
-    "name": "bug"
+    "name": "\u0411\u0430\u0433"
   }
 },
 {
   "model": "webapp.type",
   "pk": 3,
   "fields": {
-    "name": "enhancement"
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 1,
-  "fields": {
-    "summary": "\u0412\u0435\u0440\u0441\u0442\u043a\u0430 \u043b\u0435\u043d\u0434\u0438\u043d\u0433\u0430",
-    "description": "\u041f\u0440\u0438\u0448\u0435\u043b \u0437\u0430\u043a\u0430\u0437, \u043d\u0430\u0434\u043e \u0434\u0435\u043b\u0430\u0442\u044c",
-    "status": 1,
-    "type": 1,
-    "created_at": "2020-08-06"
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 2,
-  "fields": {
-    "summary": "\u0421\u0434\u0435\u043b\u0430\u0442\u044c \u043c\u0430\u043a\u0435\u0442 \u0441\u0430\u0439\u0442\u0430",
-    "description": "\u0421\u0430\u0439\u0442 \u043f\u043e \u043f\u0440\u043e\u0434\u0430\u0436\u0435 \u0440\u0430\u0437\u043d\u044b\u0445 \u0441\u043e\u0440\u0442\u043e\u0432 \u043a\u043e\u043a\u0430\u0438\u043d\u0430",
-    "status": 2,
-    "type": 1,
-    "created_at": "2020-08-06"
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 3,
-  "fields": {
-    "summary": "\u0418\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u043e\u0448\u0438\u0431\u043a\u0430 \u0432 \u0431\u0430\u0437\u043e\u0432\u043e\u043c \u0448\u0430\u0431\u043b\u043e\u043d\u0435",
-    "description": "\u0421\u0442\u0443\u0434\u0435\u043d\u0442 \u0434\u043e\u043f\u0443\u0441\u0442\u0438\u043b \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0431\u0430\u043d\u0430\u043b\u044c\u043d\u044b\u0445 \u043e\u0448\u0438\u0431\u043e\u043a. \u041d\u0443\u0436\u043d\u043e \u043d\u0430\u0439\u0442\u0438 \u0438 \u0438\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c.",
-    "status": 2,
-    "type": 2,
-    "created_at": "2020-08-06"
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 4,
-  "fields": {
-    "summary": "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0444\u0443\u043d\u043a\u0446\u0438\u044e \u04229",
-    "description": "\u041d\u0443\u0436\u043d\u043e \u0441\u043e\u0437\u0434\u0430\u0442\u044c \u0438 \u0432\u043d\u0435\u0434\u0440\u0438\u0442\u044c \u0444\u0443\u043d\u043a\u0446\u0438\u044e \u0430\u0432\u0442\u043e\u0438\u0441\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u043d\u0430 \u0441\u0430\u0439\u0442\u0435 \u0424\u0430\u043d\u0444\u0438\u043a.\u0440\u0443",
-    "status": 3,
-    "type": 3,
-    "created_at": "2020-08-06"
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 5,
-  "fields": {
-    "summary": "\u0418\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c index.html",
-    "description": "",
-    "status": 2,
-    "type": 2,
-    "created_at": "2020-08-06"
+    "name": "\u0423\u043b\u0443\u0447\u0448\u0435\u043d\u0438\u0435"
   }
 },
 {
   "model": "webapp.task",
   "pk": 6,
   "fields": {
-    "summary": "\u0414\u043e\u0434\u0435\u043b\u0430\u0442\u044c CRM",
-    "description": "",
+    "summary": "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0444\u0443\u043d\u043a\u0446\u0438\u044e \u04229 bug",
+    "description": "das,daskdasdmlkasmd\r\nflkdslkfamdsf\r\nasdflmklksadmfsad",
+    "status": 2,
+    "created_at": "2020-08-12",
+    "updated_at": "2020-08-15",
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 7,
+  "fields": {
+    "summary": "\u0421\u0434\u0435\u043b\u0430\u0442\u044c \u043c\u0430\u043a\u0435\u0442 \u0441\u0430\u0439\u0442\u0430",
+    "description": "\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u0444\u0431\u044c\u044b\u0432\u0442\u0444\u044b\u0431\u044c\u0432\u0442\u0444\u044b\r\n\u0432\u044b\u0444\u0432\u0434\u0444\u043b\u044b\u044c\u0432\u0434\u0444\u043b\u044b\u044c\u0432\u043b\u0444\u044b\u0432\u044c\u0444\u044b\u0434\u0412\u0444\u044b\u044c\u0434\u043b\u0432\u0444\u044c\u044b\u0434\r\n\u044b\u0444\u044c\u0434\u0432\u0444\u044b\u044c\u043b\u0432\u0444\u044c\u044b\u0434\u043b\u0432\u0444\u044c\u044b\u043b\u0434\u0432\u0444\u043b\u044b\r\n\u0432\u044c\u0444\u044b\u0434\u0432\u044c\u044b\r\n\u0432\u044c\u0434\u043b\u0444\u044b\u044c\u0432\r\n\u0444\u044b\u0434\u0432\u043b\u0444\u044b\u044c\u0432\u044b\u0444\u0432\u0444\u044b",
     "status": 1,
-    "type": 3,
-    "created_at": "2020-08-06"
+    "created_at": "2020-08-13",
+    "updated_at": "2020-08-14",
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 8,
+  "fields": {
+    "summary": "\u0418\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u043e\u0448\u0438\u0431\u043a\u0443 \u0432 \u0431\u0430\u0437\u043e\u0432\u043e\u043c \u0448\u0430\u0431\u043b\u043e\u043d\u0435",
+    "description": "\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\r\n\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\r\n\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\r\n\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\r\n\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\r\n\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b\u0432\u0444\u044b",
+    "status": 2,
+    "created_at": "2020-08-14",
+    "updated_at": "2020-08-14",
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 10,
+  "fields": {
+    "summary": "sdasf;alsmdl;asdas;d",
+    "description": "dasdklasldkasmd\r\nasmdasdmlaskdmas\r\ndmas\r\ndaslda,sl;da,s;dlas,\r\ndas,;lda,sl;d,asl;d,as\r\nd,asl;d,al;s,dlas,d,;asd",
+    "status": 2,
+    "created_at": "2020-08-14",
+    "updated_at": "2020-08-15",
+    "type": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 11,
+  "fields": {
+    "summary": "asdasdasdasdasdasd bug",
+    "description": "rlkgjkarmgkmarlksmf;asmf;'\r\nasdfmmme fmasdf\r\nasdmflsadmflksadmkflmasdmkfas\r\nmasdlkfmaskdmfmasdlkfmasdlkf",
+    "status": 3,
+    "created_at": "2020-08-14",
+    "updated_at": "2020-08-15",
+    "type": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 12,
+  "fields": {
+    "summary": "lkarmglmsdkgmnaskmgf",
+    "description": "asd.;asl;,dlkaslds\r\nd'famdlksdfkmdklsdmfkas\r\nfmsdlkfmaskdmfkmdflksdam\r\nfsdkflmasdlkfmasdklfmkmdflk\r\nmflkasdmflksadmdjkeNFLKJS\r\nDNAFKJSDMNFKJASDKFNJKSADF",
+    "status": 3,
+    "created_at": "2020-08-15",
+    "updated_at": "2020-08-15",
+    "type": [
+      1,
+      3
+    ]
   }
 },
 {
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$150000$1sZITyYplswp$s112oS+20aowpnlcRbtOWIX2al5jHIl9kekdfy602Vs=",
-    "last_login": "2020-08-06T08:56:49.880Z",
+    "password": "pbkdf2_sha256$150000$b7PamOyZ1gl5$EyIQKAY2NsTW8yWqrnsFrHOme9/W1ZiWvFRQZIysSzI=",
+    "last_login": "2020-08-12T07:37:41.379Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -120,7 +140,7 @@
     "email": "admin@admin.com",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2020-08-06T08:54:21.301Z",
+    "date_joined": "2020-08-12T07:37:09.357Z",
     "groups": [],
     "user_permissions": []
   }
